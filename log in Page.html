@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Majobela | Sign In</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+      --primary: #43d16f;
+      --dark: #121212;
+      --darker: #0a0a0a;
+      --gray: #b3b3b3;
+      --light: #f0f0f0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--darker);
+      color: var(--light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      width: 400px;
+      padding: 50px;
+      background: #1a1a1a;
+      border-radius: 16px;
+      border: 1px solid #333;
+      text-align: center;
+    }
+    .logo {
+      font-size: 2.5em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .tagline {
+      color: var(--gray);
+      font-size: 0.9em;
+      margin-bottom: 30px;
+    }
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      background: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 8px;
+      color: white;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: black;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .footer {
+      margin-top: 30px;
+      color: var(--gray);
+      font-size: 0.9em;
+    }
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="logo">MAJOBELA</div>
+<p class="tagline">75% Royalty. Global Reach. AI-Powered.</p>
+<input type="email" placeholder="Email" required />
+<input type="password" placeholder="Password" required />
+<button onclick="login()">Log In</button>
+<p class="footer">
+New artist? <a href="signup.html">Sign Up</a>
+</p>
+</div>
+<script>
+    function login() {
+      localStorage.setItem('isLoggedIn', 'true');
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</body>
+</html>

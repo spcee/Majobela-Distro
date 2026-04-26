@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Majobela | Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #43d16f;
+      --dark: #121212;
+      --darker: #0a0a0a;
+      --gray: #b3b3b3;
+      --light: #f0f0f0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--darker);
+      color: var(--light);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 20px;
+      background: #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #333;
+    }
+    .logo {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    nav a {
+      color: var(--gray);
+      margin-left: 20px;
+      text-decoration: none;
+    }
+    .container {
+      padding: 30px;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+      border: 1px solid #333;
+    }
+    .btn {
+      background: var(--primary);
+      color: black;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    textarea {
+      width: 100%;
+      padding: 12px;
+      background: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 8px;
+      color: white;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MAJOBELA</div>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="upload.html">Upload</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Welcome back, Artist</h1>
+
+    <div class="card">
+      <h2>🎯 AI Marketing</h2>
+      <p>Generate promo content in one click</p>
+      <textarea id="prompt" placeholder="Try: 'Write a hype caption for my new Afro-Tech track'"></textarea>
+      <button class="btn" onclick="runAI()">Ask AI</button>
+      <textarea id="output" readonly placeholder="AI response will appear here..."></textarea>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Quick Actions</h2>
+      <button class="btn" onclick="location.href='upload.html'">Upload Track</button>
+    </div>
+  </div>
+
+  <script>
+    function runAI() {
+      const prompt = document.getElementById("prompt").value;
+      const output = document.getElementById("output");
+      if (!prompt) {
+        output.value = "Please enter a prompt.";
+        return;
+      }
+      output.value = "AI: Generating promo for your track...\n\n• Caption: 'Midnight Flow — the sound of now 🔥 #AfroTech'\n• TikTok Challenge: 'Drop & Glow' dance\n• Top 3 Influencers: @DanceKing, @VibeCheck, @AfroWave";
+    }
+  </script>
+
+</body>
+</html>
